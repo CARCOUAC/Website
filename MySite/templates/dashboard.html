@@ -1,0 +1,136 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dashboard</title>
+
+   
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Mukta:wght@300;400;600;700;800&family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/landing_smart.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/table.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/dashboard.css')}}">
+</head>
+
+<body>
+    <div class="container">
+        <header class="head my-3">
+            <nav class="navbar navbar-expand-lg navbar-light head__custom-nav">
+                <a class="navbar-brand d-flex align-items-center" href="home">
+                    <img src="{{ url_for('static', filename='styles/images/logo.png') }}" alt="website logo">
+                    <span>Braining Bot</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                    <span><img src="{{ url_for('static', filename='styles/images/menu.png') }}" alt=""></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="table">Add a Bot</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="table">My Bots</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="home">About us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-primary" href="auth">Log In</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <p><a href="table">return to my_bots</a></p>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="card">
+                <div class="card-header">
+                    <h1>Bot 1</h1>
+                </div>
+                <div class="card-body">
+                    <p>your wallet is : 1500$ => 0.33 eth</p>
+                    <a href="#" class="btn add">ADD MONEY</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h1>Change ?</h1>
+                </div>
+                <div class="card-body">
+                    <p>change the strategy of this bot</p>
+                    <a href="#" class="btn change">CHANGE IT</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h1>Stop ?</h1>
+                </div>
+                <div class="card-body">
+                    <p>you can sto me in One button</p>
+                    <a href="#" class="btn stop">STOP IT</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="recent-orders"> <!--class="table-responsive">-->
+        <table class="table-sortable">
+            <thead>
+                <tr>
+                    {% for col in column_names %}
+                    <th>
+                        {{col}}
+                    </th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in row_data %}
+                <tr>
+                    {% for col, row_ in zip(column_names, row) %}
+                    <td>
+                        {% if row_=='stop' %}
+                        <p class="status status-unpaid">{{row_}}</p>
+                        {% elif row_ =='run' %}
+                        <p class="status status-paid">{{row_}}</p>
+                        {% else %}
+                        {{row_}}
+                        {% endif %}
+                    </td>
+                    {% endfor %}
+                </tr>
+              {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+     <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <script src="{{ url_for('static', filename='js/sortTable.js')}}"></script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

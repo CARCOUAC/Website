@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport", charset="UTF-8" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/home.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/new_home.css')}}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="{{url_for('static', filename='styles/images/logo.png')}}" class="logo">
+            <nav>
+                <ul class="nav__links">
+                    <li><a class="active" href="#">Add A bot</a></li>
+                    <li><a href="#">My Bots</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">News</a></li>
+                </ul>    
+            </nav>
+            <!--<a class="cta" href="#"><button>Contact</button></a> -->
+            <!--<img src="{{url_for('static', filename='styles/images/menu.png')}}" class="menu-icon">-->
+        </header>
+
+        <div class="row">
+            <div class="col"><h1>My Bots</h1><p>
+                voici bot teading news une fhhfee edeh dzenhfdh 
+                ejzfheiuzf efheiucje euzhu, ehfbez</p>
+                <button type="button">Explore</button>
+            </div>
+            <div class="col">
+                <div class="card card1">
+                    <h5>Add A New Bot</h5>
+                </div>
+                <div class="card card2">
+                    <h5>My Bots</h5>
+                </div>
+                <div class="card card3">
+                    <h5>About</h5>
+
+                </div>
+                <div class="card card4">
+                    <h5>News</h5>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+</html>

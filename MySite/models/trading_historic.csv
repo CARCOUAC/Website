@@ -1,0 +1,9 @@
+date,position,price,coins,wallet,reason,result_in_%,trade_is
+1970-01-01 00:00:00,sell,292.42,0.0,963.,sell_order_market,-3.62,bad
+1970-01-01 00:00:00,buy,299.82,0.0,962.3,buy_order_market,-0.07,bad
+1970-01-01 00:00:00,sell,336.25,0.0,1078.5,sell_order_market,12.07,good
+1970-01-01 00:00:00,buy,333.94,1077,1250,buy_order_market,-0.07,bad
+1970-01-01 00:00:00,sell,385.93,1244.,1400,sell_order_market,15.48,good
+1970-01-01 00:00:00,buy,383.76,1243.8,0.0,buy_order_market,-0.06,bad
+1970-01-01 00:00:00,sell,388.74,0.0,1259,sell_order_market,1.22,good
+1970-01-01 00:00:00,buy,384.88,3.2,1258.2,buy_order_market,-0.06,bad
