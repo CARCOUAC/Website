@@ -3,13 +3,6 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
-        <entry key="\JS_SITE\static\lib\PapaParse-5.0.2\docs\resources\files\normal.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
         <entry key="\MySite\models\bot.csv">
           <value>
             <Attribute>

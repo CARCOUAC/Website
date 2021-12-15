@@ -5,7 +5,6 @@ app = Flask(__name__)
 
 path = 'C:/Users/egm94/PycharmProjects/Website/MySite/models'
 
-
 @app.route('/auth')
 def authentication():
     return render_template('authentication.html')
@@ -17,7 +16,7 @@ def home():
     return render_template('Home.html')
 
 
-overview_bot = pd.read_csv('C:/Users/egm94/PycharmProjects/Website/MySite/models/bot.csv')
+overview_bot = pd.read_csv(f'{path}/bot.csv')
 
 
 @app.route("/table")
@@ -27,7 +26,7 @@ def overview():
                            zip=zip)
 
 
-trading_historic = pd.read_csv('C:/Users/egm94/PycharmProjects/Website/MySite/models/trading_historic.csv')
+trading_historic = pd.read_csv(f'{path}/trading_historic.csv')
 
 @app.route('/dashboard')
 def dashboard():
